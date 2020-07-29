@@ -1,0 +1,109 @@
+{% extends "admin/layout.njk" %}
+
+{% block head %}
+    <title>Foodfy - Editar {{recipe.title}}</title>
+{% endblock head %}
+
+{% block content %}
+<div id="wrapper">
+    <form id="form-save" action="/admin/recipes?_method=PUT" method="POST">
+        <div class="recipe-header">
+            <h2>Editando receita</h2>
+            <div>
+                <button form="form-delete" type="submit">Deletar</button>
+                <button form="form-save" type="submit">Salvar receita</button>
+            </div>
+        </div>
+
+        <section class="details">
+            <div class="item">   
+                <div>Imagem da Receita</div>
+                <div>
+                    <input 
+                        name="image_url"
+                        type="url"
+                        placeholder="http://"
+                        value="{{ recipe.image_url }}"
+                        required
+                    >
+                </div>
+                </div>
+
+            <div class="item">   
+                <div>Título da Receita</div>
+                <div>
+                    <input 
+                        name="title"
+                        type="text"
+                        value="{{ recipe.title }}"
+                        required
+                    >
+                </div>
+            </div>
+            
+                <div class="item">   
+                    <div>Autor</div>
+                    <div>
+                        <input 
+                            name="author"
+                            type="text"
+                            value="{{ recipe.author }}"
+                            required
+                        >
+                    </div>
+                </div>
+
+            <div class="item">   
+                <div>Ingredientes</div>
+                <div>
+                    <div id="ingredients">
+                        {% for ingredient in recipe.ingredients %}
+                        <div class="ingredient">
+                            <input
+                                type="text"
+                                name="ingredients[]"
+                                placeholder="Novo Ingrediente"
+                                value="{{ ingredient }}" />
+                        </div>
+                        {% endfor %}
+                    </div> 
+                    <button type="button" class="add-ingredient">Adicionar novo ingrediente</button>
+                </div>
+            </div>
+
+            <div class="item">   
+                <div>Modo de preparo</div>
+                <div>
+                    <div id="preparations">
+                        {% for preparation in recipe.preparation %}
+                        <div class="preparation">
+                            <input
+                                type="text"
+                                name="preparation[]"
+                                placeholder="Novo passo"
+                                value="{{ preparation }}" />
+                        </div>
+                        {% endfor %}
+                    </div> 
+                    <button type="button" class="add-preparation">Adicionar novo passo</button>
+                </div>
+            </div>
+
+            <div class="item">   
+                <div>Informações adicionais</div>
+                <div>
+                    <textarea name="information">{{ recipe.information }}</textarea>
+                </div>
+            </div>
+
+            <input type="hidden" name="id" value="{{ recipe.id }}">
+        </section>
+    </form>
+    <form id="form-delete" action="/admin/recipes?_method=DELETE" method="POST">
+        <input type="hidden" name="id" value="{{ recipe.id }}">
+    </form>
+</div>
+
+{% include "fieldMaker.njk" %}
+
+{% endblock content %}

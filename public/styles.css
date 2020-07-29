@@ -1,0 +1,367 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #111111;
+}
+
+
+header {
+    padding-top: 32px;
+    width: 940px;
+    margin: 0 auto;
+}
+
+.links {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100px;
+    align-items: center;
+    margin-bottom: 24px;
+    font-size: 16px;
+}
+
+.links .image {
+ 
+    margin-right: 100px;
+    margin-left: 0;
+}
+
+.links .active-sobre {
+    font-weight: bold;
+}
+
+.links a{
+    margin: 0 24px;
+    text-decoration: none;
+    color: #111111;
+}
+
+.link-active {
+    font-weight: bold;
+}
+
+#wrapper {
+    width: 940px;
+    margin: 0 auto;
+}
+
+.container-info {
+    background-color: #FBDFDB;
+    border-radius: 30px;
+    width: 940px;
+    height: 366px;
+    position: relative;
+}
+
+.container-info-nf {
+    background-color: #FBDFDB;
+    border-radius: 30px;
+    width: 940px;
+    height: 366px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.container-info-nf  h1{
+    padding-top: 140px;
+}
+
+.container-info img {
+    position: absolute;
+    bottom: 0px;
+    right: 80px;
+}
+
+.container-info h1 {
+    position: absolute;
+    left: 50px;
+    top: 120px;
+    font-size: 32px;
+    line-height: 38px;
+}
+
+.container-info p {
+    font-size: 18px;
+    line-height: 28px;
+    opacity: 0.7;
+    color: #000000;
+    position: absolute;
+    left: 50px;
+    top: 170px;
+    text-align: left;
+    width: 316px;
+}
+
+.container-dishes {
+    margin-top: 44px;
+}
+
+.container-dishes h1 {
+    font-size: 24px;
+    text-align: left;
+}
+
+.dishes {
+    margin: 24px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    text-align: left;
+}
+
+.dishes img {
+    width: 100%;
+    height: 140px;
+    border-radius: 15px;
+}
+
+.dishes h1 {
+    font-size: 18px;
+    padding-top: 20px;
+    padding-bottom: 8px; 
+}
+
+.dishes h2 {
+    font-size: 14px;
+    color: #777777;
+}
+
+.dish {
+    text-align: left;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+
+.dish h1 {
+    text-align: left;
+    font-weight: normal;
+}
+
+.dish h2 {
+    text-align: left;
+    font-weight: normal;
+}
+
+
+/*===ABOUT===*/
+
+.container-article {
+    margin-top: 44px;
+}
+
+.container-article h1 {
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.container-article h2 {
+    font-size: 20px;
+}
+
+.container-article p {
+    font-size: 18px;
+    line-height: 28px;
+    color: #444444;
+    margin: 28px 0;
+}
+
+.footer {
+    display: grid;
+    background-color: #EEEEEE;
+    margin-top: 36px;
+    height: 62px;
+    align-items: center;
+}
+
+.footer p {
+    font-size: 14px;
+    color:  #999999;
+    text-align: center;
+}
+
+/*===MATERIALICON===*/
+
+.material-icons.md-dark.md-inactive {
+     color: rgba(0, 0, 0, 0.26);
+     cursor: pointer;
+}
+
+/*===RECIPE-DETAIL===*/
+
+.dish.details {
+    margin: 50px 0;
+    cursor: default;
+}
+
+.dish.details img {
+    border-radius: 15px;
+}
+
+.dish.details h1{
+    text-align: center;
+    font-weight: bold;
+    font-size: 36px;
+    margin-top: 50px;
+    margin-bottom: 4px;
+}
+
+.dish.details h2 {
+    text-align: center;
+    color: #777777;
+    font-size: 20px;
+}
+
+.container-article.index h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.container-article.index ul {
+    margin-bottom: 39px;
+}
+
+.container-article.index li {
+    list-style-position: inside;
+    font-size: 18px;
+    color: #444444;
+    line-height: 28px;
+}
+
+.container-article.index i {
+    padding: 0 10px;
+}
+
+.content-ingredients.active, .content-preps.active, .content-infos.active {
+    display: none;
+}
+
+/*===ADMIN===*/
+
+/*===ADMIN RECIPES===*/
+
+header.admin {
+    box-sizing: border-box;
+    background-color: #111111;
+    height: 80px;
+    width: 100%;
+}
+
+.links.admin {
+    display: block;
+    width: 940px;
+    margin: 0 auto;
+}
+
+.container-dishes.admin {
+    margin-top: 50px;
+}
+
+.dishes.admin {
+    grid-template-columns: 1fr 1fr;
+    margin-top: 30px;
+}
+
+.dishes.admin .dish {
+    cursor: default;
+}
+
+.dishes.admin img {
+    width: 172px;
+    height: 80px;
+    float: left;
+    margin-right: 20px;
+}
+
+.dishes.admin h1 {
+    padding: 0 0 5px 0;
+    line-height: 21px;
+}
+
+.dishes.admin a.button {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 14px;
+    text-decoration: none;
+    color: #6558C3;
+    font-weight: bold;
+}
+
+/*===ADMIN DETAILS===*/
+
+.recipe-header {
+    margin-top: 55px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.recipe-header button[type="submit"],
+.recipe-header a {
+    font-size: 14px;
+    padding: 9px 20px;
+    background: #6558C3;
+    border-radius: 4px;
+    text-decoration: none;
+    color: white;
+}
+
+.dish.details.admin {
+    margin-top: 20px;
+}
+
+/*===ADMIN EDIT===*/
+
+.recipe-header div button[form="form-delete"] {
+    background-color: #DC4747;
+    margin-right: 10px;
+}
+
+.details {
+    margin-top: 26px;
+}
+
+.details .item {
+    margin: 24px 0;
+}
+
+.details .item div:nth-child(1) {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.details .item div:nth-child(2) {
+    font-size: 16px;
+}
+
+input, textarea {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 16px 20px;
+    margin: 4px 0;
+    outline: none;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    font-size: 18px;
+}
+
+.details .item textarea {
+    height: 257px;
+    line-height: 24px;
+    resize: none;
+    font-family: 'Roboto', sans-serif;
+    color: #111111;
+}
+
+.details .item button[type="button"] {
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #6558C3;
+}

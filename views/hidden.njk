@@ -1,0 +1,19 @@
+<script>
+    const icons = document.querySelectorAll('i')
+
+    for(let icon of icons) {
+    icon.addEventListener("click", function() {
+        const icon_id = icon.getAttribute("id")
+        const element = document.querySelector(`.content-${icon_id}`)
+
+        if(element.classList.contains("active")) {
+            element.classList.remove("active")
+            icon.innerHTML = "visibility"
+        }
+        else {
+            element.classList.add("active")
+            icon.innerHTML = "visibility_off"
+        }
+    })
+}
+</script>

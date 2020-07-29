@@ -1,0 +1,57 @@
+{% extends "web/layout.njk" %}
+
+{% block head %}
+    <title>Foodfy - {{recipe.title}}</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+{% endblock head %}
+
+{% block links %}
+<a href="/about">Sobre</a>
+<a class="link-active" href="/recipe">Receitas</a>
+{% endblock links %}
+
+{% block content %}
+<div id="wrapper">
+    <div class="container-recipe">
+        <div class="dish details">
+            <img src="{{recipe.image_url}}" alt="Imagem de {{recipe.title}}">
+            <h1>{{recipe.title}}</h1>
+            <h2>Por {{recipe.author}}</h2>
+        </div> 
+        <div class="container-article index">
+            <div class="container-article recipe">   
+                <h2>Ingredientes <i id="ingredients"class="material-icons md-dark md-inactive">visibility</i></h2>
+            </div>
+            <div class="content-ingredients">
+                <ul>
+                    {% for ingredient in recipe.ingredients %}
+                    <li>{{ingredient}}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="container-article recipe">
+                <h2>Modo de preparo
+                <i id="preps" class="material-icons md-dark md-inactive">visibility</i>
+                </h2>
+            </div>
+            <div class="content-preps">
+                {% for step in recipe.preparation %}
+                <p>{{step}}</p>
+                {% endfor %}
+            </div>
+            <div class="container-article recipe">
+                <h2>Informações adicionais
+                <i id="infos" class="material-icons md-dark md-inactive">visibility</i>
+                </h2>
+            </div>
+            <div class="content-infos">
+                <p>{{recipe.information}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include "hidden.njk" %}
+
+{% endblock content %}

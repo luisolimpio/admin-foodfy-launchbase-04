@@ -1,0 +1,97 @@
+{% extends "admin/layout.njk" %}
+
+{% block head %}
+    <title>Foodfy - Nova receita</title>
+{% endblock head %}
+
+{% block content %}
+<div id="wrapper">
+    <form id="form-save" action="/admin/recipes" method="post">
+        <div class="recipe-header">
+            <h2>Nova receita</h2>
+            <div>
+                <button form="form-save" type="submit">Salvar receita</button>
+            </div>
+        </div>
+
+        <section class="details">
+            <div class="item">   
+                <div>Imagem da Receita</div>
+                <div>
+                    <input 
+                        name="image_url"
+                        type="url"
+                        placeholder="http://"
+                        value="{{ recipe.image_url }}"
+                        required
+                    >
+                </div>
+            </div>
+
+            <div class="item">   
+                <div>Título da Receita</div>
+                <div>
+                    <input 
+                        name="title"
+                        type="text"
+                        value="{{ recipe.title }}"
+                        required
+                    >
+                </div>
+            </div>
+
+             <div class="item">   
+                <div>Autor</div>
+                <div>
+                    <input 
+                        name="author"
+                        type="text"
+                        value="{{ recipe.author }}"
+                        required
+                    >
+                </div>
+            </div>
+
+            <div class="item">   
+                <div>Ingredientes</div>
+                    <div id="ingredients">
+                        <div class="ingredient">
+                            <input 
+                                type="text"
+                                name="ingredients[]"
+                                placeholder="Novo Ingrediente"
+                                value=""
+                                required />
+                        </div>
+                    </div> 
+                    <button type="button" class="add-ingredient">Adicionar novo ingrediente</button>
+            </div>
+
+            <div class="item">   
+                <div>Modo de preparo</div>
+                    <div id="preparations">
+                        <div class="preparation">
+                            <input
+                                type="text"
+                                name="preparation[]"
+                                placeholder="Novo passo"
+                                value=""
+                                required />
+                        </div>
+                    </div> 
+                    <button type="button" class="add-preparation">Adicionar novo passo</button>
+            </div>
+
+            <div class="item">   
+                <div>Informações adicionais</div>
+                <div>
+                    <textarea name="information">{{ recipe.information }}</textarea>
+                </div>
+            </div>
+        </section>
+    </form>
+</div>
+ 
+{% include "fieldMaker.njk" %}
+
+{% endblock content %}

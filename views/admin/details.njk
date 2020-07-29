@@ -1,0 +1,56 @@
+{% extends "admin/layout.njk" %}
+
+{% block head %}
+    <title>Foodfy - {{recipe.title}}</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+{% endblock head %}
+
+{% block content %}
+<div id="wrapper">
+    <div class="container-recipe">
+        <div class="recipe-header">
+            <h1>Receita: {{ recipe.title }}</h1>
+            <a href="/admin/recipes/{{ recipe.id }}/edit">Editar receita</a>
+        </div>
+        <div class="dish details admin">
+            <img src="{{recipe.image_url}}" alt="Imagem de {{recipe.title}}">
+            <h1>{{ recipe.title }}</h1>
+            <h2>Por {{ recipe.author }}</h2>
+        </div> 
+        <div class="container-article index">
+            <div class="container-article recipe">   
+                <h2>Ingredientes <i id="ingredients"class="material-icons md-dark md-inactive">visibility</i></h2>
+            </div>
+            <div class="content-ingredients">
+                <ul>
+                    {% for ingredient in recipe.ingredients %}
+                    <li>{{ ingredient }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="container-article recipe">
+                <h2>Modo de preparo
+                <i id="preps" class="material-icons md-dark md-inactive">visibility</i>
+                </h2>
+            </div>
+            <div class="content-preps">
+                {% for preparation in recipe.preparation %}
+                <p>{{ preparation }}</p>
+                {% endfor %}
+            </div>
+            <div class="container-article recipe">
+                <h2>Informações adicionais
+                <i id="infos" class="material-icons md-dark md-inactive">visibility</i>
+                </h2>
+            </div>
+            <div class="content-infos">
+                <p>{{ recipe.information }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include "hidden.njk" %}
+
+{% endblock content %}
